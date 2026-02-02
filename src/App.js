@@ -33,7 +33,7 @@ function Logo() {
   return <h1>⛵⛵Far Away</h1>;
 }
 
-function Form(onAddItems) {
+function Form({onAddItems}) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -72,11 +72,11 @@ function Form(onAddItems) {
   );
 }
 
-function PackingLists() {
+function PackingLists({ items }) {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
+        {items.map((item) => (
           <Item item={item} key={item.id} />
         ))}
       </ul>
